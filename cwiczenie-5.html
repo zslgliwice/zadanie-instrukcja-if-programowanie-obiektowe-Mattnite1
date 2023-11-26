@@ -21,8 +21,12 @@
 	
 		function teleturniej()
 		{
+			const results = document.getElementById('wynik')
 			var lucky = Math.floor(Math.random() * 3) + 1;
 			
+			lucky === 1 ? results.innerHTML = "Wygrałeś samochód!" : results.innerHTML = "Przegrałeś.... samochód znajdował się w skrytce: " + lucky 
+			lucky === 2 ? results.innerHTML = "Wygrałeś samochód!" : results.innerHTML = "Przegrałeś.... samochód znajdował się w skrytce: " + lucky
+			lucky === 3 ? results.innerHTML = "Wygrałeś samochód!" : results.innerHTML = "Przegrałeś.... samochód znajdował się w skrytce: " + lucky
 		}
 
 	</script>
