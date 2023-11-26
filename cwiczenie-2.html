@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>2 - Instrukcja warunkowa w JavaScript</title>
+    <link href="arkusz-cwiczenia.css" rel="stylesheet" />
+  </head>
 
-<head>
+  <body>
+    <label> Podaj imię: <input type="text" id="imie" /> </label>
+    <label> Podaj wiek: <input type="number" id="wiek" /> </label>
 
-	<meta charset="utf-8">
-	<title>2 - Instrukcja warunkowa w JavaScript</title>
-	<link href="arkusz-cwiczenia.css" rel="stylesheet">
-	
-</head>
+    <input type="submit" value="Sprawdź udział" onclick="sprawdz()" />
 
-<body>
+    <div id="wynik"></div>
 
-	<label> Podaj imię: <input type="text" id="imie"> </label>
-	<label> Podaj wiek: <input type="number" id="wiek"> </label>
-	
-	<input type="submit" value="Sprawdź udział" onclick="sprawdz()">
+    <script>
+      function sprawdz() {
+        const name = document.getElementById("imie").value;
+        const age = document.getElementById("wiek").value;
+        const results = document.getElementById("wynik");
 
-	<div id="wynik"></div>
-	
-	<script>
-	
-		function sprawdz()
-		{
-			
-			
-		}
-
-	</script>
-
-</body>
+        if (age < 16) {
+          results.innerHTML = "Nie mozesz wziąć udziału w seansie";
+        } else if (age >= 16 & age < 18) {
+          results.innerHTML = "Mozesz wziąć udział w seansie, ale z opiekunem. Koszt to 12zł";
+        } else if (age >= 18 & (name === "Morgan" || name === "Brad")) {
+          results.innerHTML = "Mozesz wziąć udział w seansie za darmo.";
+        } else if (age >= 18) {
+          results.innerHTML = "Mozesz wziąć udział w seansie. Koszt to 18zł";
+      }
+	}
+    </script>
+  </body>
 </html>
