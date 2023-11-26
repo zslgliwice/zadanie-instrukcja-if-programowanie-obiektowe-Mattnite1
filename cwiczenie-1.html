@@ -12,7 +12,7 @@
 <body>
 
 	<label>
-		Podaj numer dnia tygodnia: <input type="number">
+		Podaj numer dnia tygodnia: <input type="number" id="input">
 	</label>
 	
 	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
@@ -23,8 +23,30 @@
 	
 		function getDayName()
 		{
-					
+		const input = document.getElementById('input').value
+		const results = document.getElementById('wynik')
 			
+		if (input === '1') {
+			results.innerHTML = "Pierwszy dzień tygodnia to Monday - poniedziałek"
+		} else if (input === '2') {
+			results.innerHTML = "Drugi dzień tygodnia to Tuesday - wtorek"
+		} else if (input === '3') {
+			results.innerHTML = "Trzeci dzień tygodnia to Wednesday - środa"
+		} else if (input === '4') {
+			results.innerHTML = "Czwarty dzień tygodnia to Thursday - czwartek"
+		} else if (input === '5') {
+			results.innerHTML = "Piąty dzień tygodnia to Friday - piątek, piąteczek, piątunio"
+			results.style.color = 'yellow'
+		} else if (input === '6') {
+			results.innerHTML = "Szósty dzień tygodnia to Saturday - sobota"
+			results.style.color = 'green'
+		} else if (input === '7') {
+			results.innerHTML = "Siódmy dzień tygodnia to Sunday - niedziela"
+			results.style.color = 'green'
+		} else {
+			results.innerHTML = "Nieprawidłowy dzień tygodnia"
+			results.style.color = 'red'
+		}
 		}
 
 	</script>
